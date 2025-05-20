@@ -226,23 +226,23 @@
                 <h5 class="modal-title" id="galleryModalLabel">Galeria zdjęć</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Zamknij"></button>
             </div>
-            <div class="modal-body">
-                <div class="row g-3">
-                    <?php
-            $dir = "assets/images/";
-            $allowed_types = array('jpg','jpeg','png','gif','webp');
-            $files = scandir($dir);
-            foreach($files as $file) {
-                $ext = strtolower(pathinfo($file, PATHINFO_EXTENSION));
-                if (in_array($ext, $allowed_types)) {
-                    echo '<div class="col-12 col-sm-6 col-md-3 mb-3">';
-                    echo '<img src="'.$dir.$file.'" class="img-fluid rounded shadow-sm" alt="'.$file.'">';
-                    echo '</div>';
-                }
-                }
-                ?>
-            </div>
-        </div>
+<!--            <div class="modal-body">-->
+<!--                <div class="row g-3">-->
+<!--                    --><?php
+//                    $dir = "assets/images/";
+//                    $allowed_types = array('jpg', 'jpeg', 'png', 'gif', 'webp');
+//                    $files = scandir($dir);
+//                    foreach ($files as $file) {
+//                        $ext = strtolower(pathinfo($file, PATHINFO_EXTENSION));
+//                        if (in_array($ext, $allowed_types)) {
+//                            echo '<div class="col-12 col-sm-6 col-md-3 mb-3">';
+//                            echo '<img src="' . $dir . $file . '" class="img-fluid rounded shadow-sm" alt="' . $file . '">';
+//                            echo '</div>';
+//                        }
+//                    }
+//                    ?>
+<!--                </div>-->
+<!--            </div>-->
         <div class="modal-footer border-0">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Zamknij</button>
         </div>
