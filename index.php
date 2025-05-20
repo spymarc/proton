@@ -33,12 +33,21 @@
 
 
 <!-- Hero -->
-<section class="py-5 text-center bg-light">
-    <div class="container">
-        <h1 class="display-5 fw-bold mb-3"><span class="accent">Nowoczesna</span> postprodukcja dźwięku</h1>
-        <p class="lead mb-4">Profesjonalna realizacja dźwięku dla filmu, reklamy i gier.<br>Twój projekt w najlepszych rękach.</p>
-        <a href="#kontakt" class="btn btn-accent btn-lg">Skontaktuj się</a>
+<section class="hero-section d-flex align-items-center justify-content-center text-center position-relative" id="hero">
+    <div class="hero-overlay"></div>
+    <div class="container hero-content position-relative z-2">
+        <h1 class="display-5 fw-bold mb-3 text-white">
+            <span class="accent">Nowoczesna</span> postprodukcja dźwięku
+        </h1>
+        <p class="lead mb-4 text-white">
+            Profesjonalna realizacja dźwięku dla filmu, reklamy i gier.<br>
+            Twój projekt w najlepszych rękach.
+        </p>
+        <a href="#kontakt" class="btn btn-accent btn-lg shadow">Skontaktuj się</a>
     </div>
+    <a href="#o-firmie" class="scroll-down-arrow position-absolute start-50 translate-middle-x">
+        <i class="bi bi-arrow-down-circle-fill"></i>
+    </a>
 </section>
 
 <!-- O firmie -->
