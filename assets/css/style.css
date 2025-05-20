@@ -150,7 +150,7 @@ footer {
     min-height: 400px;
     width: 100%;
     height: 100vh;
-    background: url('assets/images/glowna.png') center center/cover no-repeat;
+    background: url('../images/glowna.png') center center/cover no-repeat;
     display: flex;
     align-items: center;
     justify-content: center;
