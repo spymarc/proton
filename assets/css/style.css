@@ -17,48 +17,52 @@ body {
     color: var(--granat);
 }
 
-.navbar {
-    background: transparent; /* Initial transparent background */
-    transition: background-color 0.3s ease-in-out; /* Smooth transition for background color change */
-}
+/* Navbar styles are now primarily handled by Bootstrap classes like .navbar-dark .bg-dark */
+/* Customizations below are for active/hover states and specific brand requirements */
 
-.navbar-scrolled {
-    background-color: var(--granat);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-}
+/* Ensure .navbar-dark .navbar-nav .nav-link colors are sufficient. Default is rgba(255,255,255,.55) and rgba(255,255,255,.75) for hover/active */
+/* We can override if needed, but let's test Bootstrap defaults first. */
 
-.navbar-nav .nav-link.active {
-    /* Modern look: bottom border */
+/* Active link style - keeping the red bottom border for brand consistency */
+.navbar-dark .navbar-nav .nav-link.active {
+    color: var(--bialy) !important; /* Brighter white for active link text */
     border-bottom: 3px solid var(--czerwony);
+}
+
+/* Hover link style - red color for consistency */
+.navbar-dark .navbar-nav .nav-link:hover,
+.navbar-dark .navbar-nav .nav-link:focus {
     color: var(--czerwony) !important;
 }
 
-.navbar-nav .nav-link:hover {
-    color: var(--czerwony) !important;
-}
-
+/* Navbar brand styling - Bootstrap defaults should be fine */
 .navbar-brand {
     font-weight: bold;
     letter-spacing: 1px;
-    color: var(--bialy) !important;
-    font-size: 1.6rem;
+    color: var(--bialy) !important; /* Default is good, but explicit can be kept */
+    font-size: 1.6rem; /* Keep custom font size if desired */
     display: flex;
     align-items: center;
     gap: 0.5rem;
 }
 
-.nav-link {
-    color: var(--bialy) !important;
-    font-weight: 500;
-    transition: color 0.2s;
-}
+/* General nav-link styling under navbar-dark - Bootstrap handles this */
+/* .navbar-dark .nav-link { ... } */
+
 
 .section-title {
     border-left: 5px solid var(--czerwony);
     padding-left: 0.6em;
-    margin-bottom: 1em;
+    /* margin-bottom is now handled by Bootstrap utility classes like mb-5 */
     font-weight: bold;
     letter-spacing: 1px;
+}
+
+.sub-section-title {
+    font-weight: bold;
+    letter-spacing: 0.5px; /* Slightly less spacing than main title */
+    color: var(--granat); /* Or inherit, or a slightly lighter shade */
+    /* No border-left like .section-title */
 }
 
 .accent {
@@ -69,23 +73,33 @@ body {
     background: var(--czerwony);
     color: var(--bialy);
     border: none;
+    font-weight: 600;
+    padding: 0.6rem 1.2rem;
+    transition: background-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
 .btn-accent:hover {
-    background: #b71c1c;
+    background: #c5302b; /* Darker shade of var(--czerwony) */
     color: var(--bialy);
 }
 
-.card {
-    border: none;
-    box-shadow: 0 4px 24px rgba(26, 35, 126, 0.08);
-    transition: transform 0.2s;
+.btn-accent:focus {
+    background: #c5302b;
+    color: var(--bialy);
+    box-shadow: 0 0 0 0.25rem rgba(229, 57, 53, 0.5);
 }
 
-.card:hover {
+/* Cards now use Bootstrap's shadow-sm utility class. Custom shadow and hover transform removed for cleaner BS integration. */
+.card {
+    border: none; /* Keep borderless style for cards */
+    /* transition: transform 0.2s; */ /* Removing custom transition as hover effect is removed */
+}
+
+/* Removing custom card hover effect to rely on Bootstrap's look or simpler effects if added later. */
+/* .card:hover {
     transform: translateY(-4px) scale(1.02);
     box-shadow: 0 8px 32px rgba(229, 57, 53, 0.15);
-}
+} */
 
 .footer-subtle {
     background-color: #222222; /* Dark gray background */
@@ -246,18 +260,23 @@ body {
 
 /* Medium devices (tablets, less than 992px) */
 @media (max-width: 991.98px) {
-    .navbar-nav .nav-link {
-        padding-top: 0.8rem; /* Increase tappable area for collapsed menu */
+    /* Collapsed menu active link styling */
+    .navbar-dark .navbar-collapse.show .navbar-nav .nav-link.active,
+    .navbar-dark .navbar-collapse.collapsing .navbar-nav .nav-link.active {
+        border-bottom: none; /* Remove bottom border for stacked links */
+        border-left: 3px solid var(--czerwony); /* Add left border instead */
+        background-color: rgba(229, 57, 53, 0.1); /* Optional: Slight background highlight */
+        /* Ensure text color remains highly visible, e.g., white or the red from the border */
+        color: var(--bialy) !important; /* Or var(--czerwony) if preferred */
+        padding-left: calc(1rem - 3px); /* Adjust padding to align text nicely, Bootstrap .nav-link has 0.5rem L/R padding by default */
+    }
+    
+    .navbar-dark .navbar-collapse.show .navbar-nav .nav-link,
+    .navbar-dark .navbar-collapse.collapsing .navbar-nav .nav-link {
+        padding-top: 0.8rem; 
         padding-bottom: 0.8rem;
     }
 
-    .navbar-nav .nav-link.active {
-        border-bottom: none; /* Remove bottom border */
-        /* Optionally, add a left border or different highlight for active link in collapsed menu */
-        border-left: 3px solid var(--czerwony);
-        background-color: rgba(229, 57, 53, 0.1); /* Slight background highlight */
-        padding-left: calc(0.5rem - 3px); /* Adjust padding to account for border */
-    }
 
     .navbar-brand img {
         max-height: 40px; /* Slightly smaller logo for tablet */
@@ -290,6 +309,10 @@ body {
         font-size: 1.6rem; /* Slightly smaller section titles */
     }
 
+    .sub-section-title { /* Responsive adjustment for sub-section title if needed */
+        font-size: 1.3rem; /* Example: make it slightly smaller than h4.section-title */
+    }
+
     .contact-person-img {
         width: 80px; /* Smaller contact images */
         height: 80px;
@@ -300,9 +323,7 @@ body {
         margin: 0 0.5rem;
     }
 
-    h4.section-title { /* For the "Kluczowe osoby kontaktowe" title */
-        font-size: 1.4rem;
-    }
+    /* h4.section-title rule is no longer needed as we use .sub-section-title class now */
 }
 
 /* Extra small devices (portrait phones, less than 576px) */
@@ -319,9 +340,7 @@ body {
     .hero-content p {
         font-size: 0.9rem; /* Adjust hero paragraph size */
     }
-    
-    .contact-person-details p small { /* Reduce font for contact person email/phone */
-        font-size: 0.8em;
-    }
+    /* Removed .contact-person-details p small rule as the class is not used in HTML 
+       and Bootstrap's .small or <small> tag already provides size reduction. */
 }
 
