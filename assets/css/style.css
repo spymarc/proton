@@ -18,10 +18,22 @@ body {
 }
 
 .navbar {
-    background: var(--granat);
+    background: transparent; /* Initial transparent background */
+    transition: background-color 0.3s ease-in-out; /* Smooth transition for background color change */
 }
 
-.navbar-nav .nav-link.active, .navbar-nav .nav-link:hover {
+.navbar-scrolled {
+    background-color: var(--granat);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.navbar-nav .nav-link.active {
+    /* Modern look: bottom border */
+    border-bottom: 3px solid var(--czerwony);
+    color: var(--czerwony) !important;
+}
+
+.navbar-nav .nav-link:hover {
     color: var(--czerwony) !important;
 }
 
@@ -75,12 +87,33 @@ body {
     box-shadow: 0 8px 32px rgba(229, 57, 53, 0.15);
 }
 
-footer {
-    background: var(--granat);
-    color: var(--bialy);
-    padding: 1.2em 0 0.5em 0;
+.footer-subtle {
+    background-color: #222222; /* Dark gray background */
+    color: #cccccc;           /* Light gray text */
+    padding: 2em 0;           /* Adjusted padding */
     margin-top: 3em;
-    text-align: center;
+    border-top: 1px solid #444444; /* Subtle border top */
+    text-align: center; /* Ensured text-align is here if not in container */
+}
+
+.footer-subtle .social-icons {
+    margin-bottom: 1rem; /* Space above copyright */
+}
+
+.footer-subtle .social-link {
+    font-size: 1.5rem;      /* Icon size */
+    color: #cccccc;         /* Icon color */
+    margin: 0 0.75rem;      /* Spacing between icons */
+    transition: color 0.2s ease-in-out;
+}
+
+.footer-subtle .social-link:hover {
+    color: var(--czerwony); /* Accent color on hover */
+    text-decoration: none;
+}
+
+.footer-subtle p {
+    margin-bottom: 0.25rem; /* Reduced margin for paragraphs in footer */
 }
 
 /* Gallery styling */
@@ -198,7 +231,41 @@ footer {
     }
 }
 
-@media (max-width: 768px) {
+/* Key Contacts Section */
+.contact-person-img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1rem;
+    border: 3px solid var(--czerwony);
+}
+
+
+/* Responsive Adjustments */
+
+/* Medium devices (tablets, less than 992px) */
+@media (max-width: 991.98px) {
+    .navbar-nav .nav-link {
+        padding-top: 0.8rem; /* Increase tappable area for collapsed menu */
+        padding-bottom: 0.8rem;
+    }
+
+    .navbar-nav .nav-link.active {
+        border-bottom: none; /* Remove bottom border */
+        /* Optionally, add a left border or different highlight for active link in collapsed menu */
+        border-left: 3px solid var(--czerwony);
+        background-color: rgba(229, 57, 53, 0.1); /* Slight background highlight */
+        padding-left: calc(0.5rem - 3px); /* Adjust padding to account for border */
+    }
+
+    .navbar-brand img {
+        max-height: 40px; /* Slightly smaller logo for tablet */
+    }
+}
+
+/* Small devices (landscape phones, less than 768px) */
+@media (max-width: 767.98px) {
     .hero-section {
         min-height: 380px;
         height: 100vh;
@@ -216,6 +283,45 @@ footer {
     .scroll-down-arrow {
         font-size: 2.2rem;
         bottom: 16px;
+    }
+
+    .section-title {
+        padding-left: 0.4em; /* Reduce padding for section titles */
+        font-size: 1.6rem; /* Slightly smaller section titles */
+    }
+
+    .contact-person-img {
+        width: 80px; /* Smaller contact images */
+        height: 80px;
+    }
+
+    .footer-subtle .social-link {
+        font-size: 1.3rem; /* Smaller social icons */
+        margin: 0 0.5rem;
+    }
+
+    h4.section-title { /* For the "Kluczowe osoby kontaktowe" title */
+        font-size: 1.4rem;
+    }
+}
+
+/* Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+    .navbar-brand img {
+        max-height: 32px; /* Even smaller logo for very small screens */
+        max-width: 120px;
+    }
+
+    .hero-content h1 {
+        font-size: 1.8rem; /* Adjust hero heading size */
+    }
+
+    .hero-content p {
+        font-size: 0.9rem; /* Adjust hero paragraph size */
+    }
+    
+    .contact-person-details p small { /* Reduce font for contact person email/phone */
+        font-size: 0.8em;
     }
 }
 
