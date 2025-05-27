@@ -90,7 +90,7 @@ body {
 }
 
 .accent {
-    color: var(--akcent-kolor-glowny); /* Teksty akcentowane w kolorze tła stopki */
+    color: var(--czerwony); /* Teksty akcentowane w kolorze tła stopki */
 }
 
 .btn-accent {
