@@ -18,11 +18,31 @@ body {
 }
 
 .navbar {
-    background: var(--granat);
+    /* background: var(--granat); */ /* Usunięto oryginalne tło */
+    background: transparent !important; /* Ustawienie przezroczystego tła */
+    position: absolute !important; /* Pozycjonowanie absolutne względem rodzica lub widoku + !important */
+    top: 0 !important; /* + !important */
+    left: 0 !important; /* + !important */
+    width: 100%;
+    z-index: 1030 !important; /* Upewnienie się, że nawigacja jest na wierzchu + !important */
+    transition: background-color 0.3s ease-in-out; /* Dodano dla płynnej zmiany tła */
 }
 
-.navbar-nav .nav-link.active, .navbar-nav .nav-link:hover {
-    color: var(--czerwony) !important;
+/* Nowa klasa dla nagłówka po przewinięciu */
+.navbar-scrolled {
+    background-color: rgba(44, 57, 218, 0.9) !important; /* Półprzezroczysty --granat */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-nav .nav-link.active,
+.navbar-nav .nav-link:hover {
+    color: var(--bialy) !important; /* Upewnijmy się, że tekst pozostaje biały */
+    /* Usunięto poprzedni styl: color: var(--czerwony) !important; */
+}
+
+.navbar-nav .nav-link.active::after,
+.navbar-nav .nav-link:hover::after {
+    width: 100%;
 }
 
 .navbar-brand {
@@ -38,7 +58,22 @@ body {
 .nav-link {
     color: var(--bialy) !important;
     font-weight: 500;
-    transition: color 0.2s;
+    transition: color 0.3s ease-in-out; /* Zmieniono z 0.2s */
+    position: relative; /* Dla pseudo-elementu ::after */
+    padding-bottom: 8px; /* Miejsce na podkreślenie */
+    margin: 0 10px; /* Dodatkowy margines dla lepszego wyglądu */
+}
+
+/* Efekt podkreślenia dla linków nawigacyjnych */
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--czerwony);
+    transition: width 0.3s ease-in-out;
 }
 
 .section-title {
@@ -81,6 +116,61 @@ footer {
     padding: 1.2em 0 0.5em 0;
     margin-top: 3em;
     text-align: center;
+}
+
+.site-footer {
+    background-color: var(--granat); /* #2c39da */
+    color: var(--bialy); /* #fff */
+    padding: 2rem 0; /* Zmniejszony padding góra/dół */
+    margin-top: 4rem;
+    min-height: auto; /* Usunięto min-height, zawartość zdefiniuje wysokość */
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+.site-footer .footer-logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.site-footer .footer-logo-img {
+    max-height: 40px;
+    margin-right: 0.5rem;
+}
+
+.site-footer .company-name-footer {
+    color: var(--bialy) !important;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.site-footer .social-icons a {
+    color: var(--bialy) !important;
+    font-size: 1.8rem;
+    margin: 0 0.5rem;
+    transition: color 0.3s ease-in-out, transform 0.2s ease-in-out;
+    display: inline-block;
+}
+
+.site-footer .social-icons a:hover {
+    color: var(--czerwony) !important;
+    transform: scale(1.1);
+}
+
+.site-footer .social-icons .bi {
+    color: inherit !important;
+    vertical-align: middle;
+}
+
+.site-footer .footer-copyright-row {
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    margin-top: 1.5rem;
+}
+
+.site-footer .footer-copyright-row p {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.8) !important;
 }
 
 /* Gallery styling */
