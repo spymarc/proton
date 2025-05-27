@@ -3,13 +3,18 @@ html, body {
     padding: 0;
     box-sizing: border-box;
     width: 100%;
-    overflow-x: hidden; /* ukryj poziomy scroll, jeśli coś go jeszcze powoduje */
+    overflow-x: hidden;
 }
 
 :root {
     --granat: #2c39da;
+    --granat-trans: rgba(44, 57, 218, 0.9);
     --bialy: #fff;
+    --bialy-trans: rgba(255, 255, 255, 0.8);
     --czerwony: #e53935;
+    --czerwony-dark: #b71c1c;
+    --shadow-light: rgba(26, 35, 126, 0.08);
+    --shadow-dark: rgba(229, 57, 53, 0.15);
 }
 
 body {
@@ -17,27 +22,25 @@ body {
     color: var(--granat);
 }
 
+/* Nawigacja */
 .navbar {
-    /* background: var(--granat); */ /* Usunięto oryginalne tło */
-    background: transparent !important; /* Ustawienie przezroczystego tła */
-    position: absolute !important; /* Pozycjonowanie absolutne względem rodzica lub widoku + !important */
-    top: 0 !important; /* + !important */
-    left: 0 !important; /* + !important */
+    background: transparent !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
     width: 100%;
-    z-index: 1030 !important; /* Upewnienie się, że nawigacja jest na wierzchu + !important */
-    transition: background-color 0.3s ease-in-out; /* Dodano dla płynnej zmiany tła */
+    z-index: 1030 !important;
+    transition: background-color 0.3s ease-in-out;
 }
 
-/* Nowa klasa dla nagłówka po przewinięciu */
 .navbar-scrolled {
-    background-color: rgba(44, 57, 218, 0.9) !important; /* Półprzezroczysty --granat */
+    background-color: var(--granat-trans) !important;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .navbar-nav .nav-link.active,
 .navbar-nav .nav-link:hover {
-    color: var(--bialy) !important; /* Upewnijmy się, że tekst pozostaje biały */
-    /* Usunięto poprzedni styl: color: var(--czerwony) !important; */
+    color: var(--bialy) !important;
 }
 
 .navbar-nav .nav-link.active::after,
@@ -58,13 +61,12 @@ body {
 .nav-link {
     color: var(--bialy) !important;
     font-weight: 500;
-    transition: color 0.3s ease-in-out; /* Zmieniono z 0.2s */
-    position: relative; /* Dla pseudo-elementu ::after */
-    padding-bottom: 8px; /* Miejsce na podkreślenie */
-    margin: 0 10px; /* Dodatkowy margines dla lepszego wyglądu */
+    transition: color 0.3s ease-in-out;
+    position: relative;
+    padding-bottom: 8px;
+    margin: 0 10px;
 }
 
-/* Efekt podkreślenia dla linków nawigacyjnych */
 .nav-link::after {
     content: '';
     position: absolute;
@@ -76,6 +78,7 @@ body {
     transition: width 0.3s ease-in-out;
 }
 
+/* Elementy UI */
 .section-title {
     border-left: 5px solid var(--czerwony);
     padding-left: 0.6em;
@@ -92,41 +95,31 @@ body {
     background: var(--czerwony);
     color: var(--bialy);
     border: none;
+    transition: background-color 0.2s ease;
 }
 
 .btn-accent:hover {
-    background: #b71c1c;
+    background: var(--czerwony-dark);
     color: var(--bialy);
 }
 
 .card {
     border: none;
-    box-shadow: 0 4px 24px rgba(26, 35, 126, 0.08);
+    box-shadow: 0 4px 24px var(--shadow-light);
     transition: transform 0.2s;
 }
 
 .card:hover {
     transform: translateY(-4px) scale(1.02);
-    box-shadow: 0 8px 32px rgba(229, 57, 53, 0.15);
+    box-shadow: 0 8px 32px var(--shadow-dark);
 }
 
-footer {
-    background: var(--granat);
-    color: var(--bialy);
-    padding: 1.2em 0 0.5em 0;
-    margin-top: 3em;
-    text-align: center;
-}
-
+/* Stopka */
 .site-footer {
-    background-color: var(--granat); /* #2c39da */
-    color: var(--bialy); /* #fff */
-    padding: 2rem 0; /* Zmniejszony padding góra/dół */
+    background-color: var(--granat);
+    color: var(--bialy);
+    padding: 2rem 0;
     margin-top: 4rem;
-    min-height: auto; /* Usunięto min-height, zawartość zdefiniuje wysokość */
-    display: block !important;
-    visibility: visible !important;
-    opacity: 1 !important;
 }
 
 .site-footer .footer-logo-container {
@@ -140,13 +133,13 @@ footer {
 }
 
 .site-footer .company-name-footer {
-    color: var(--bialy) !important;
+    color: var(--bialy);
     font-weight: bold;
     font-size: 1rem;
 }
 
 .site-footer .social-icons a {
-    color: var(--bialy) !important;
+    color: var(--bialy);
     font-size: 1.8rem;
     margin: 0 0.5rem;
     transition: color 0.3s ease-in-out, transform 0.2s ease-in-out;
@@ -154,12 +147,11 @@ footer {
 }
 
 .site-footer .social-icons a:hover {
-    color: var(--czerwony) !important;
+    color: var(--czerwony);
     transform: scale(1.1);
 }
 
 .site-footer .social-icons .bi {
-    color: inherit !important;
     vertical-align: middle;
 }
 
@@ -170,22 +162,23 @@ footer {
 
 .site-footer .footer-copyright-row p {
     font-size: 0.85rem;
-    color: rgba(255, 255, 255, 0.8) !important;
+    color: var(--bialy-trans);
+    margin-bottom: 0;
 }
 
-/* Gallery styling */
+/* Galeria */
 .gallery-img {
     border-radius: 0.6em;
-    box-shadow: 0 2px 12px rgba(26, 35, 126, 0.07);
+    box-shadow: 0 2px 12px var(--shadow-light);
     transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .gallery-img:hover {
     transform: scale(1.05);
-    box-shadow: 0 4px 32px rgba(229, 57, 53, 0.18);
+    box-shadow: 0 4px 32px var(--shadow-dark);
 }
 
-/* Responsive iframe for maps */
+/* Mapa */
 .map-responsive {
     overflow: hidden;
     padding-bottom: 56.25%;
@@ -201,6 +194,7 @@ footer {
     position: absolute;
 }
 
+/* Karuzela */
 .carousel-item {
     max-height: 500px;
     overflow: hidden;
@@ -224,20 +218,9 @@ footer {
     width: 5% !important;
 }
 
-.btn-accent {
-    background: var(--czerwony);
-    color: var(--bialy);
-    border: none;
-}
-
-.btn-accent:hover {
-    background: #b71c1c;
-    color: var(--bialy);
-}
-
+/* Sekcja Hero */
 .hero-section {
     position: relative;
-    min-height: 400px;
     width: 100%;
     height: 100vh;
     background: url('../images/glowna.png') center center/cover no-repeat;
@@ -246,7 +229,6 @@ footer {
     justify-content: center;
     overflow: hidden;
 }
-
 
 .hero-overlay {
     position: absolute;
@@ -276,7 +258,6 @@ footer {
 .scroll-down-arrow:hover {
     color: var(--czerwony);
     transform: scale(1.12);
-    text-decoration: none;
 }
 
 @keyframes bounce {
@@ -288,10 +269,10 @@ footer {
     }
 }
 
+/* Media Queries */
 @media (max-width: 768px) {
     .hero-section {
         min-height: 380px;
-        height: 100vh;
         padding: 2rem 0;
     }
 
@@ -308,4 +289,3 @@ footer {
         bottom: 16px;
     }
 }
-
