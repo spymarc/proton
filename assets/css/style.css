@@ -290,6 +290,102 @@ body {
         font-size: 2.2rem;
         bottom: 16px;
     }
+
+    /* Mobile styles for projects section */
+    #projekty .row {
+        flex-direction: column;
+    }
+
+    /* Make years list horizontal and scrollable */
+    #projekty .years-list {
+        margin-bottom: 1rem;
+    }
+
+    #projekty #years-list {
+        display: flex;
+        overflow-x: auto;
+        white-space: nowrap;
+        padding-bottom: 0.5rem;
+        margin-bottom: 1rem;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none; /* Firefox */
+    }
+
+    #projekty #years-list::-webkit-scrollbar {
+        display: none; /* Chrome, Safari, Edge */
+    }
+
+    #projekty #years-list .list-group-item {
+        display: inline-block;
+        border-radius: 20px;
+        margin-right: 0.5rem;
+        border: 1px solid var(--akcent-kolor-glowny);
+        padding: 0.5rem 1rem;
+        flex-shrink: 0;
+    }
+
+    #projekty #years-list .list-group-item.active {
+        background-color: var(--akcent-kolor-glowny);
+        color: var(--bialy);
+    }
+
+    /* Adjust category dropdown */
+    #projekty .form-select {
+        font-size: 1rem;
+        height: 45px; /* Larger touch target */
+    }
+
+    /* Make project list more compact */
+    #projekty #projects-list {
+        max-height: none; /* Remove fixed height on mobile */
+        margin-bottom: 1.5rem;
+    }
+
+    #projekty #projects-list .list-group-item {
+        padding: 0.75rem;
+    }
+
+    /* Improve project details card */
+    #projekty .project-card {
+        margin-bottom: 1.5rem;
+    }
+
+    #projekty .project-image {
+        height: 180px; /* Slightly smaller image height on mobile */
+    }
+
+    /* Add accordion-style behavior */
+    #projekty .mobile-section-title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.75rem 1rem;
+        background-color: var(--akcent-kolor-glowny);
+        color: var(--bialy);
+        border-radius: 5px;
+        margin-bottom: 1rem;
+        cursor: pointer;
+    }
+
+    #projekty .mobile-section-title i {
+        transition: transform 0.3s ease;
+    }
+
+    #projekty .mobile-section-title.collapsed i {
+        transform: rotate(180deg);
+    }
+
+    #projekty .mobile-section-content {
+        display: none;
+        padding: 0.5rem;
+        border: 1px solid #eee;
+        border-radius: 5px;
+        margin-bottom: 1rem;
+    }
+
+    #projekty .mobile-section-content.show {
+        display: block;
+    }
 }
 
 /* Specyficzne dla sekcji Studio */
@@ -298,4 +394,201 @@ body {
 }
 #studio .card .accent { /* Ikony w Studio w kolorze tła stopki */
     color: var(--akcent-kolor-glowny);
+}
+
+/* Specyficzne dla sekcji Projekty */
+#projekty .filter-title {
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    color: var(--akcent-kolor-glowny);
+}
+
+/* Style dla listy lat (lewa kolumna) */
+#projekty .years-list {
+    margin-bottom: 2rem;
+}
+
+#projekty #years-list .list-group-item {
+    cursor: pointer;
+    border-left: 3px solid transparent;
+    transition: all 0.2s ease;
+    padding: 0.75rem 1rem;
+}
+
+#projekty #years-list .list-group-item:hover {
+    background-color: rgba(30, 60, 114, 0.05);
+}
+
+#projekty #years-list .list-group-item.active {
+    background-color: var(--akcent-kolor-glowny);
+    color: var(--bialy);
+    border-color: var(--czerwony);
+    font-weight: 500;
+}
+
+/* Style dla listy projektów (środkowa kolumna) */
+#projekty .projects-list {
+    margin-bottom: 2rem;
+}
+
+#projekty #projects-list {
+    max-height: 400px; /* Height for approximately 6 items */
+    overflow-y: auto; /* Enable vertical scrolling */
+    scrollbar-width: thin; /* For Firefox */
+    scrollbar-color: var(--akcent-kolor-glowny) #f0f0f0; /* For Firefox */
+}
+
+#projekty #projects-list::-webkit-scrollbar {
+    width: 6px; /* Width of the scrollbar */
+}
+
+#projekty #projects-list::-webkit-scrollbar-track {
+    background: #f0f0f0; /* Color of the track */
+    border-radius: 10px;
+}
+
+#projekty #projects-list::-webkit-scrollbar-thumb {
+    background-color: var(--akcent-kolor-glowny); /* Color of the scrollbar */
+    border-radius: 10px;
+}
+
+#projekty #projects-list .list-group-item {
+    cursor: pointer;
+    border-left: 3px solid transparent;
+    transition: all 0.2s ease;
+    padding: 0.75rem 1rem;
+}
+
+#projekty #projects-list .list-group-item:hover {
+    background-color: rgba(30, 60, 114, 0.05);
+}
+
+#projekty #projects-list .list-group-item.active {
+    background-color: rgba(30, 60, 114, 0.1);
+    border-color: var(--czerwony);
+    color: var(--akcent-kolor-glowny);
+    font-weight: 500;
+}
+
+#projekty #projects-list .project-title {
+    font-weight: 500;
+    margin-bottom: 0.25rem;
+}
+
+#projekty #projects-list .project-category {
+    font-size: 0.8rem;
+    color: #6c757d;
+}
+
+#projekty .badge {
+    font-size: 0.75rem;
+    padding: 0.35em 0.65em;
+    border-radius: 12px;
+}
+
+/* Animacje dla elementów projektu */
+#projekty .project-item {
+    transition: all 0.5s ease;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+#projekty .project-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Styl dla kart projektów */
+.project-card {
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+}
+
+.project-card:hover, .project-card-hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+}
+
+.project-image {
+    position: relative;
+    overflow: hidden;
+    height: 200px;
+}
+
+.project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.project-card:hover .project-image img {
+    transform: scale(1.1);
+}
+
+.project-image .badge {
+    position: absolute;
+    z-index: 2;
+}
+
+.project-image .badge:first-of-type {
+    top: 15px;
+    left: 15px;
+}
+
+.project-image .category-badge {
+    top: 15px;
+    right: 15px;
+    background-color: var(--akcent-kolor-glowny);
+}
+
+/* Komunikat o braku projektów */
+#no-projects-message {
+    display: none;
+    text-align: center;
+    padding: 2rem;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    margin-top: 1rem;
+}
+
+/* Styl dla przełącznika języka */
+.dropdown-menu {
+    min-width: 5rem;
+}
+
+.dropdown-item {
+    text-align: center;
+}
+
+.dropdown-item:hover {
+    background-color: var(--akcent-kolor-glowny);
+    color: var(--bialy);
+}
+
+/* Poprawka dla ikony języka */
+.nav-item.dropdown .nav-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem;
+    margin: 0;
+    height: 100%;
+}
+
+.nav-item.dropdown .nav-link::after {
+    display: none; /* Wyłączenie podkreślenia dla ikony języka */
+}
+
+.nav-item.dropdown .bi-globe {
+    font-size: 1.2rem;
+    line-height: 1;
+    vertical-align: middle;
+}
+
+/* Poprawka dla dropdown toggle */
+.nav-item.dropdown .dropdown-toggle::after {
+    display: none; /* Ukryj domyślną strzałkę dropdown */
 }

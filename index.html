@@ -22,11 +22,20 @@
         </button>
         <div class="collapse navbar-collapse" id="mainNav">
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                <li class="nav-item"><a class="nav-link active" href="#kontakt">Kontakt</a></li>
-                <li class="nav-item"><a class="nav-link" href="#o-firmie">O firmie</a></li>
-                <li class="nav-item"><a class="nav-link" href="#studio">Studio</a></li>
-                <li class="nav-item"><a class="nav-link" href="#filmografia">Filmografia</a></li>
-                <li class="nav-item"><a class="nav-link" href="#galeria">Galeria</a></li>
+                <li class="nav-item"><a class="nav-link active" href="#kontakt" data-lang="nav-contact">Kontakt</a></li>
+                <li class="nav-item"><a class="nav-link" href="#o-firmie" data-lang="nav-about">O firmie</a></li>
+                <li class="nav-item"><a class="nav-link" href="#studio" data-lang="nav-studio">Studio</a></li>
+                <li class="nav-item"><a class="nav-link" href="#projekty" data-lang="nav-projects">Projekty</a></li>
+                <li class="nav-item"><a class="nav-link" href="#galeria" data-lang="nav-gallery">Galeria</a></li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="bi bi-globe"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="languageDropdown">
+                        <li><a class="dropdown-item" href="#" onclick="changeLanguage('pl')">PL</a></li>
+                        <li><a class="dropdown-item" href="#" onclick="changeLanguage('en')">EN</a></li>
+                    </ul>
+                </li>
             </ul>
         </div>
     </div>
@@ -38,13 +47,13 @@
     <div class="hero-overlay"></div>
     <div class="container hero-content position-relative z-2">
         <h1 class="display-5 fw-bold mb-3 text-white">
-            <span class="accent">Nowoczesna</span> postprodukcja dźwięku.
+            <span class="accent" data-lang="hero-modern">Nowoczesna</span> <span data-lang="hero-postproduction">postprodukcja dźwięku.</span>
         </h1>
         <p class="lead mb-4 text-white">
-            Profesjonalna realizacja dźwięku dla filmu, reklamy i gier.<br>
-            Twój projekt w najlepszych rękach.
+            <span data-lang="hero-description-1">Profesjonalna realizacja dźwięku dla filmu, reklamy i gier.</span><br>
+            <span data-lang="hero-description-2">Twój projekt w najlepszych rękach.</span>
         </p>
-        <a href="#kontakt" class="btn btn-accent btn-lg shadow">Skontaktuj się</a>
+        <a href="#kontakt" class="btn btn-accent btn-lg shadow" data-lang="hero-contact-btn">Skontaktuj się</a>
     </div>
     <a href="#o-firmie" class="scroll-down-arrow position-absolute start-50 translate-middle-x">
         <i class="bi bi-arrow-down-circle-fill"></i>
@@ -53,20 +62,20 @@
 
 <!-- O firmie -->
 <section id="o-firmie" class="container py-5">
-    <h2 class="section-title">O firmie</h2>
+    <h2 class="section-title" data-lang="about-title">O firmie</h2>
     <div class="row align-items-center">
         <div class="col-lg-6 mb-4 mb-lg-0">
-            <p>
+            <p data-lang="about-description">
                 Jesteśmy zespołem pasjonatów dźwięku z wieloletnim doświadczeniem w branży filmowej, reklamowej i
                 gamingowej. Nasze studio to połączenie nowoczesnych technologii, kreatywności i dbałości o każdy detal.
                 Realizujemy projekty dla największych marek oraz niezależnych twórców.
             </p>
             <ul class="list-unstyled">
-                <li><i class="bi bi-check2-circle accent"></i> Kompleksowa postprodukcja dźwięku</li>
-                <li><i class="bi bi-check2-circle accent"></i> Nagrania lektorskie i dubbing</li>
-                <li><i class="bi bi-check2-circle accent"></i> Sound design, miks, mastering</li>
+                <li><i class="bi bi-check2-circle accent"></i> <span data-lang="about-service-1">Kompleksowa postprodukcja dźwięku</span></li>
+                <li><i class="bi bi-check2-circle accent"></i> <span data-lang="about-service-2">Nagrania lektorskie i dubbing</span></li>
+                <li><i class="bi bi-check2-circle accent"></i> <span data-lang="about-service-3">Sound design, miks, mastering</span></li>
             </ul>
-            <button class="btn btn-accent mt-3" data-bs-toggle="modal" data-bs-target="#aboutModal">
+            <button class="btn btn-accent mt-3" data-bs-toggle="modal" data-bs-target="#aboutModal" data-lang="about-more-btn">
                 Więcej
             </button>
         </div>
@@ -81,24 +90,24 @@
     <div class="modal-dialog modal-lg modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header border-0">
-                <h5 class="modal-title" id="aboutModalLabel">O firmie – więcej informacji</h5>
+                <h5 class="modal-title" id="aboutModalLabel" data-lang="about-modal-title">O firmie – więcej informacji</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Zamknij"></button>
             </div>
             <div class="modal-body position-relative">
                 <img src="assets/images/ja5.jpg" alt="Logo" class="rounded-circle shadow position-absolute"
                      style="top:16px; right:16px; width:80px; height:80px; object-fit:contain; opacity:0.92;">
                 <div style="padding-right:110px;">
-                    <p>
+                    <p data-lang="about-modal-p1">
                         Firma Pro-Ton Krzysztof Jastrząb działa od 1998 roku. Oferuje profesjonalne usługi w zakresie
                         realizacji dźwięku na planie filmowym oraz kompleksową postprodukcję dźwięku włącznie z końcowym
                         zgraniem.
                     </p>
-                    <p>
+                    <p data-lang="about-modal-p2">
                         Założycielem i właścicielem firmy jest dr Krzysztof Jastrząb - absolwent i wieloletni pedagog
                         Wydziału Reżyserii Dźwięku Uniwersytetu Muzycznego Fryderyka Chopina w Warszawie, autor dźwięku
                         do wielu filmów fabularnych, seriali telewizyjnych, teatrów TV i reklam.
                     </p>
-                    <p>
+                    <p data-lang="about-modal-p3">
                         Profesjonalne wyposażenie studia oraz twórcza współpraca z najlepszymi absolwentami Wydziału
                         Reżyserii Dźwięku Uniwersytetu Muzycznego w Warszawie są gwarancją najwyższej jakości usług
                         firmy Pro-Ton Krzysztof Jastrząb.
@@ -106,7 +115,7 @@
                 </div>
             </div>
             <div class="modal-footer border-0">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Zamknij</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" data-lang="about-modal-close">Zamknij</button>
             </div>
         </div>
     </div>
@@ -116,14 +125,14 @@
 <!-- Studio -->
 <section id="studio" class="bg-light py-5">
     <div class="container">
-        <h2 class="section-title">Studio</h2>
+        <h2 class="section-title" data-lang="studio-title">Studio</h2>
         <div class="row g-4">
             <div class="col-md-4">
                 <div class="card">
                     <div class="card-body text-center">
                         <i class="bi bi-mic-fill display-4 accent mb-3"></i>
-                        <h5 class="card-title">Nagrania</h5>
-                        <p class="card-text">Izolowana kabina, mikrofony klasy premium, nagrania lektorskie, wokalne i
+                        <h5 class="card-title" data-lang="studio-recordings">Nagrania</h5>
+                        <p class="card-text" data-lang="studio-recordings-desc">Izolowana kabina, mikrofony klasy premium, nagrania lektorskie, wokalne i
                             instrumentów.</p>
                     </div>
                 </div>
@@ -132,8 +141,8 @@
                 <div class="card">
                     <div class="card-body text-center">
                         <i class="bi bi-sliders2-vertical display-4 accent mb-3"></i>
-                        <h5 class="card-title">Postprodukcja</h5>
-                        <p class="card-text">Zaawansowane oprogramowanie, miks, mastering, sound design, restauracja
+                        <h5 class="card-title" data-lang="studio-postproduction">Postprodukcja</h5>
+                        <p class="card-text" data-lang="studio-postproduction-desc">Zaawansowane oprogramowanie, miks, mastering, sound design, restauracja
                             dźwięku.</p>
                     </div>
                 </div>
@@ -142,8 +151,8 @@
                 <div class="card">
                     <div class="card-body text-center">
                         <i class="bi bi-headphones display-4 accent mb-3"></i>
-                        <h5 class="card-title">Odsłuch</h5>
-                        <p class="card-text">Profesjonalne monitory studyjne, akustyka pomieszczeń, komfortowa
+                        <h5 class="card-title" data-lang="studio-monitoring">Odsłuch</h5>
+                        <p class="card-text" data-lang="studio-monitoring-desc">Profesjonalne monitory studyjne, akustyka pomieszczeń, komfortowa
                             przestrzeń do pracy.</p>
                     </div>
                 </div>
@@ -152,47 +161,157 @@
     </div>
 </section>
 
-<!-- Filmografia -->
-<section id="filmografia" class="container py-5">
-    <h2 class="section-title">Filmografia</h2>
-    <div class="row g-4">
-        <div class="col-md-4">
-            <div class="card h-100">
-                <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=400&q=80"
-                     class="card-img-top" alt="Film 1">
-                <div class="card-body">
-                    <h5 class="card-title">Film: "Cisza Nocy"</h5>
-                    <p class="card-text">Nagrania dialogów, sound design, miks i mastering do nagradzanego dramatu.</p>
-                </div>
+<!-- Projekty -->
+<section id="projekty" class="container py-5">
+    <h2 class="section-title" data-lang="projects-title">Projekty</h2>
+
+    <!-- Mobile accordion headers (visible only on mobile) -->
+    <div class="d-md-none">
+        <!-- Filters accordion -->
+        <div class="mobile-section-title" id="filters-toggle">
+            <span data-lang="projects-filters">Filtry</span>
+            <i class="bi bi-chevron-up"></i>
+        </div>
+        <div class="mobile-section-content" id="filters-content">
+            <!-- Years list (horizontal on mobile) -->
+            <div class="years-list">
+                <h6 class="filter-title" data-lang="projects-filter-year">Rok:</h6>
+                <ul class="list-group" id="years-list">
+                    <li class="list-group-item active" data-year="all" data-lang="projects-all-years">Wszystkie lata</li>
+                    <li class="list-group-item" data-year="2023" data-lang="projects-2023">2023</li>
+                    <li class="list-group-item" data-year="2022" data-lang="projects-2022">2022</li>
+                    <li class="list-group-item" data-year="2021" data-lang="projects-2021">2021</li>
+                    <li class="list-group-item" data-year="2020" data-lang="projects-2020">2020</li>
+                </ul>
+            </div>
+
+            <!-- Category dropdown -->
+            <div class="mb-3">
+                <h6 class="filter-title" data-lang="projects-filter-category">Kategoria:</h6>
+                <select class="form-select" id="category-select-mobile" aria-label="Wybierz kategorię">
+                    <option value="all" selected data-lang="projects-all-categories">Wszystkie</option>
+                    <option value="film" data-lang="projects-category-film">Film fabularny</option>
+                    <option value="serial" data-lang="projects-category-serial">Serial</option>
+                    <option value="reklama" data-lang="projects-category-commercial">Reklama</option>
+                    <option value="dokument" data-lang="projects-category-documentary">Dokument</option>
+                    <option value="gra" data-lang="projects-category-game">Gra</option>
+                    <option value="audio" data-lang="projects-category-audio">Audiobook</option>
+                </select>
             </div>
         </div>
-        <div class="col-md-4">
-            <div class="card h-100">
-                <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80"
-                     class="card-img-top" alt="Film 2">
-                <div class="card-body">
-                    <h5 class="card-title">Reklama: "Nowa Energia"</h5>
-                    <p class="card-text">Kompleksowa postprodukcja dźwięku, efekty specjalne audio, lektor.</p>
-                </div>
+
+        <!-- Projects list accordion -->
+        <div class="mobile-section-title" id="projects-toggle">
+            <span data-lang="projects-titles">Tytuły</span>
+            <i class="bi bi-chevron-up"></i>
+        </div>
+        <div class="mobile-section-content" id="projects-content">
+            <div id="no-projects-message-mobile" class="alert alert-info" role="alert">
+                <i class="bi bi-info-circle me-2"></i>
+                <span data-lang="projects-no-results">Brak projektów spełniających wybrane kryteria.</span>
+            </div>
+            <ul class="list-group" id="projects-list-mobile">
+                <!-- Lista tytułów projektów będzie generowana dynamicznie przez JavaScript -->
+            </ul>
+        </div>
+    </div>
+
+    <!-- Desktop layout (hidden on mobile) -->
+    <div class="row d-none d-md-flex">
+        <!-- Lewa kolumna - lista lat -->
+        <div class="col-md-2">
+            <div class="years-list">
+                <h6 class="filter-title" data-lang="projects-filter-year">Rok:</h6>
+                <ul class="list-group" id="years-list-desktop">
+                    <li class="list-group-item active" data-year="all" data-lang="projects-all-years">Wszystkie lata</li>
+                    <li class="list-group-item" data-year="2023" data-lang="projects-2023">2023</li>
+                    <li class="list-group-item" data-year="2022" data-lang="projects-2022">2022</li>
+                    <li class="list-group-item" data-year="2021" data-lang="projects-2021">2021</li>
+                    <li class="list-group-item" data-year="2020" data-lang="projects-2020">2020</li>
+                </ul>
             </div>
         </div>
+
+        <!-- Środkowa kolumna - lista tytułów projektów -->
         <div class="col-md-4">
-            <div class="card h-100">
-                <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80"
-                     class="card-img-top" alt="Film 3">
-                <div class="card-body">
-                    <h5 class="card-title">Gra: "CyberRun"</h5>
-                    <p class="card-text">Tworzenie efektów dźwiękowych i muzyki do gry komputerowej.</p>
+            <div class="projects-list">
+                <h6 class="filter-title" data-lang="projects-titles">Tytuły:</h6>
+
+                <!-- Dropdown dla kategorii -->
+                <div class="mb-3">
+                    <select class="form-select" id="category-select" aria-label="Wybierz kategorię">
+                        <option value="all" selected data-lang="projects-all-categories">Wszystkie</option>
+                        <option value="film" data-lang="projects-category-film">Film fabularny</option>
+                        <option value="serial" data-lang="projects-category-serial">Serial</option>
+                        <option value="reklama" data-lang="projects-category-commercial">Reklama</option>
+                        <option value="dokument" data-lang="projects-category-documentary">Dokument</option>
+                        <option value="gra" data-lang="projects-category-game">Gra</option>
+                        <option value="audio" data-lang="projects-category-audio">Audiobook</option>
+                    </select>
+                </div>
+
+                <div id="no-projects-message" class="alert alert-info" role="alert">
+                    <i class="bi bi-info-circle me-2"></i>
+                    <span data-lang="projects-no-results">Brak projektów spełniających wybrane kryteria.</span>
+                </div>
+                <ul class="list-group" id="projects-list">
+                    <!-- Lista tytułów projektów będzie generowana dynamicznie przez JavaScript -->
+                </ul>
+            </div>
+        </div>
+
+        <!-- Prawa kolumna - szczegóły wybranego projektu -->
+        <div class="col-md-6">
+            <div class="project-details" id="project-details-desktop">
+                <div class="card project-card">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Projekt" id="project-image-desktop">
+                        <span class="badge bg-success" id="project-status-desktop" data-lang="project-status-completed">Ukończony</span>
+                        <span class="badge bg-info category-badge" id="project-category-desktop" data-lang="project-category-film">Film fabularny</span>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title" id="project-title-desktop">Wybierz projekt z listy</h5>
+                        <p class="card-text" id="project-desc-desktop"></p>
+                        <p class="text-muted"><small id="project-client-desktop"></small></p>
+                    </div>
+                    <div class="card-footer bg-transparent">
+                        <small class="text-muted" id="project-date-desktop"></small>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+
+    <!-- Project details for mobile (always visible) -->
+    <div class="d-md-none mt-3">
+        <div class="project-details" id="project-details-mobile">
+            <div class="card project-card">
+                <div class="project-image">
+                    <img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Projekt" id="project-image-mobile">
+                    <span class="badge bg-success" id="project-status-mobile" data-lang="project-status-completed">Ukończony</span>
+                    <span class="badge bg-info category-badge" id="project-category-mobile" data-lang="project-category-film">Film fabularny</span>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title" id="project-title-mobile">Wybierz projekt z listy</h5>
+                    <p class="card-text" id="project-desc-mobile"></p>
+                    <p class="text-muted"><small id="project-client-mobile"></small></p>
+                </div>
+                <div class="card-footer bg-transparent">
+                    <small class="text-muted" id="project-date-mobile"></small>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Kontener dla projektów (pusty, dane są ładowane z pliku JS) -->
+    <div class="d-none" id="projects-container"></div>
 </section>
+
 
 <!-- Galeria -->
 <section id="galeria" class="bg-light py-5">
     <div class="container">
-        <h2 class="section-title mb-5">Galeria</h2>
+        <h2 class="section-title mb-5" data-lang="gallery-title">Galeria</h2>
         <div id="studioCarousel" class="carousel slide shadow-lg rounded-4 mb-4" data-bs-ride="carousel"
              data-bs-interval="3000" data-bs-wrap="true" data-bs-pause="hover">
             <!-- Indicators -->
@@ -224,16 +343,16 @@
             <!-- Controls -->
             <button class="carousel-control-prev" type="button" data-bs-target="#studioCarousel" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon"></span>
-                <span class="visually-hidden">Poprzednie</span>
+                <span class="visually-hidden" data-lang="gallery-previous">Poprzednie</span>
             </button>
             <button class="carousel-control-next" type="button" data-bs-target="#studioCarousel" data-bs-slide="next">
                 <span class="carousel-control-next-icon"></span>
-                <span class="visually-hidden">Następne</span>
+                <span class="visually-hidden" data-lang="gallery-next">Następne</span>
             </button>
         </div>
         <div class="text-center">
             <button class="btn btn-accent btn-lg" data-bs-toggle="modal" data-bs-target="#galleryModal">
-                <i class="bi bi-grid-3x3-gap"></i> Zobacz wszystkie
+                <i class="bi bi-grid-3x3-gap"></i> <span data-lang="gallery-view-all">Zobacz wszystkie</span>
             </button>
         </div>
     </div>
@@ -244,12 +363,12 @@
     <div class="modal-dialog modal-xl modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header border-0">
-                <h5 class="modal-title" id="galleryModalLabel">Galeria zdjęć</h5>
+                <h5 class="modal-title" id="galleryModalLabel" data-lang="gallery-modal-title">Galeria zdjęć</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Zamknij"></button>
             </div>
         </div>
         <div class="modal-footer border-0">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Zamknij</button>
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" data-lang="gallery-modal-close">Zamknij</button>
         </div>
     </div>
 </div>
@@ -257,53 +376,53 @@
 
 <!-- Kontakt -->
 <section id="kontakt" class="container py-5">
-    <h2 class="section-title">Kontakt</h2>
+    <h2 class="section-title" data-lang="contact-title">Kontakt</h2>
     <div class="row g-4">
         <div class="col-md-6">
             <form>
                 <div class="mb-3">
-                    <label for="name" class="form-label">Imię i nazwisko</label>
-                    <input type="text" class="form-control" id="name" placeholder="Twoje imię">
+                    <label for="name" class="form-label" data-lang="contact-name">Imię i nazwisko</label>
+                    <input type="text" class="form-control" id="name" data-lang-placeholder="contact-name-placeholder" placeholder="Twoje imię">
                 </div>
                 <div class="mb-3">
-                    <label for="email" class="form-label">Adres email</label>
-                    <input type="email" class="form-control" id="email" placeholder="Twój email">
+                    <label for="email" class="form-label" data-lang="contact-email">Adres email</label>
+                    <input type="email" class="form-control" id="email" data-lang-placeholder="contact-email-placeholder" placeholder="Twój email">
                 </div>
                 <div class="mb-3">
-                    <label for="message" class="form-label">Wiadomość</label>
-                    <textarea class="form-control" id="message" rows="4" placeholder="Napisz wiadomość"></textarea>
+                    <label for="message" class="form-label" data-lang="contact-message">Wiadomość</label>
+                    <textarea class="form-control" id="message" rows="4" data-lang-placeholder="contact-message-placeholder" placeholder="Napisz wiadomość"></textarea>
                 </div>
-                <button type="submit" class="btn btn-accent">Wyślij</button>
+                <button type="submit" class="btn btn-accent" data-lang="contact-submit">Wyślij</button>
             </form>
 
             <!-- Nowy układ 3-kolumnowy dla danych kontaktowych -->
             <div class="row mt-5">
                 <!-- Kolumna 1: Biuro -->
                 <div class="col-12 col-lg-4 mb-4 mb-lg-0 text-center text-lg-start border-end">
-                    <h5 class="mb-3">Biuro</h5>
-                    <p><i class="bi bi-geo-alt accent"></i> ul. Wiosenna 8, 05-082 Koczargi Nowe</p>
-                    <p><i class="bi bi-envelope accent"></i> kontakt@pro-ton-studio.pl</p>
-                    <p><i class="bi bi-telephone accent"></i> +48 501 283 077, (0 22) 752 90 35</p>
+                    <h5 class="mb-3" data-lang="contact-office">Biuro</h5>
+                    <p><i class="bi bi-geo-alt accent"></i> <span data-lang="contact-address">ul. Wiosenna 8, 05-082 Koczargi Nowe</span></p>
+                    <p><i class="bi bi-envelope accent"></i> <span data-lang="contact-email-address">kontakt@pro-ton-studio.pl</span></p>
+                    <p><i class="bi bi-telephone accent"></i> <span data-lang="contact-phone">+48 501 283 077, (0 22) 752 90 35</span></p>
                 </div>
 
                 <!-- Kolumna 2: Osoba 1 -->
                 <div class="col-12 col-lg-4 mb-4 mb-lg-0 text-center border-end">
                     <img src="assets/images/ja5.jpg" alt="Jan Kowalski" class="rounded-circle mb-3 mx-auto"
                          style="width: 100px; height: 100px; object-fit: cover;">
-                    <h5 class="mb-1">Jan Kowalski</h5>
-                    <p class="text-muted mb-1">Manager Studia</p>
-                    <p class="mb-0"><small><i class="bi bi-envelope accent"></i> jan.kowalski@example.com</small></p>
-                    <p class="mb-0"><small><i class="bi bi-telephone accent"></i> +48 123 456 789</small></p>
+                    <h5 class="mb-1" data-lang="contact-person1-name">Jan Kowalski</h5>
+                    <p class="text-muted mb-1" data-lang="contact-person1-title">Manager Studia</p>
+                    <p class="mb-0"><small><i class="bi bi-envelope accent"></i> <span data-lang="contact-person1-email">jan.kowalski@example.com</span></small></p>
+                    <p class="mb-0"><small><i class="bi bi-telephone accent"></i> <span data-lang="contact-person1-phone">+48 123 456 789</span></small></p>
                 </div>
 
                 <!-- Kolumna 3: Osoba 2 -->
                 <div class="col-12 col-lg-4 text-center">
                     <img src="assets/images/pexels-karolina-grabowska-4016579.jpg" alt="Anna Nowak"
                          class="rounded-circle mb-3 mx-auto" style="width: 100px; height: 100px; object-fit: cover;">
-                    <h5 class="mb-1">Anna Nowak</h5>
-                    <p class="text-muted mb-1">Specjalista ds. Rezerwacji</p>
-                    <p class="mb-0"><small><i class="bi bi-envelope accent"></i> anna.nowak@example.com</small></p>
-                    <p class="mb-0"><small><i class="bi bi-telephone accent"></i> +48 987 654 321</small></p>
+                    <h5 class="mb-1" data-lang="contact-person2-name">Anna Nowak</h5>
+                    <p class="text-muted mb-1" data-lang="contact-person2-title">Specjalista ds. Rezerwacji</p>
+                    <p class="mb-0"><small><i class="bi bi-envelope accent"></i> <span data-lang="contact-person2-email">anna.nowak@example.com</span></small></p>
+                    <p class="mb-0"><small><i class="bi bi-telephone accent"></i> <span data-lang="contact-person2-phone">+48 987 654 321</span></small></p>
                 </div>
             </div>
         </div>
@@ -339,13 +458,15 @@
         <!-- Dolny wiersz: Prawa Autorskie -->
         <div class="row footer-copyright-row">
             <div class="col-12 text-center pt-3">
-                <p class="mb-0">&copy; <span id="currentYear"></span> Pro-Ton Studio. Wszelkie prawa zastrzeżone.</p>
+                <p class="mb-0" data-lang="footer-copyright">&copy; <span id="currentYear"></span> Pro-Ton Studio. Wszelkie prawa zastrzeżone.</p>
             </div>
         </div>
     </div>
 </footer>
 
 <script src="assets/vendor/bootstrap.bundle.min.js"></script>
+<script src="assets/js/translations.js"></script>
+<script src="assets/js/projects.js"></script>
 <script src="assets/js/main.js"></script>
 </body>
 </html>
