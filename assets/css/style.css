@@ -592,3 +592,178 @@ body {
 .nav-item.dropdown .dropdown-toggle::after {
     display: none; /* Ukryj domyślną strzałkę dropdown */
 }
+
+/* Styl dla sekcji nagród */
+.award-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 10px;
+    overflow: hidden;
+    border: none;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.award-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.award-image {
+    height: 180px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.award-image img {
+    max-height: 100%;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.award-card:hover .award-image img {
+    transform: scale(1.05);
+}
+
+.award-card .card-title {
+    color: var(--akcent-kolor-glowny);
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+/* Styl dla sekcji zespołu */
+
+.team-container {
+    width: calc(300% / 7 + 3rem); /* Show exactly 3 out of 7 members plus margins */
+    overflow: hidden;
+    position: relative;
+    margin: 2rem auto; /* Center the container */
+    max-width: 100%; /* Ensure it doesn't overflow the parent */
+    padding: 1rem 0; /* Add vertical padding for hover effect */
+}
+
+.team-slider {
+    display: flex;
+    width: calc(100% * 7 / 3); /* Width for 7 members, showing 3 at a time */
+    transition: transform 0.5s ease-in-out;
+    animation: slideTeam 70s linear infinite; /* 10s per slide, 7 slides total */
+    margin-left: 0; /* Start at the first member */
+}
+
+@keyframes slideTeam {
+    0% {
+        transform: translateX(0);
+    }
+    /* Each step is 10 seconds in a 70-second animation */
+    14.286% {
+        transform: translateX(calc(-100% / 7)); /* Move left by 1 member */
+    }
+    28.571% {
+        transform: translateX(calc(-200% / 7)); /* Move left by 2 members */
+    }
+    42.857% {
+        transform: translateX(calc(-300% / 7)); /* Move left by 3 members */
+    }
+    57.143% {
+        transform: translateX(calc(-400% / 7)); /* Move left by 4 members */
+    }
+    71.429% {
+        transform: translateX(calc(-500% / 7)); /* Move left by 5 members */
+    }
+    85.714% {
+        transform: translateX(calc(-600% / 7)); /* Move left by 6 members */
+    }
+    /* Create a seamless loop by going back to the beginning */
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.team-member {
+    flex: 0 0 calc(100% / 7); /* Each member takes 1/7 of the slider width */
+    width: calc(100% / 7); /* Fixed width to ensure exactly 3 members are visible */
+    padding: 2rem;
+    margin: 0 0.5rem;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 10px;
+    box-sizing: border-box; /* Include padding in width calculation */
+}
+
+.team-member:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    background-color: rgba(255, 255, 255, 0.9);
+    z-index: 10; /* Ensure hovered item appears above others */
+}
+
+.team-member-img {
+    width: 180px;
+    height: 180px;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 50%;
+    border: 5px solid var(--bialy);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.team-member:hover .team-member-img {
+    transform: scale(1.02);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.team-member-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.team-member h5 {
+    color: var(--akcent-kolor-glowny);
+    font-weight: 600;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.team-member p {
+    color: #6c757d;
+    font-size: 0.9rem;
+}
+
+/* Pause animation on hover */
+.team-slider:hover {
+    animation-play-state: paused;
+}
+
+@media (max-width: 768px) {
+    .team-member-img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .team-container {
+        width: calc(300% / 7 + 1.5rem); /* Keep the same ratio as desktop but with smaller margins */
+        padding: 0.5rem 0;
+    }
+
+    .team-slider {
+        width: calc(100% * 7 / 3); /* Keep the same ratio as desktop */
+    }
+
+    .team-member {
+        flex: 0 0 calc(100% / 7); /* Keep the same ratio as desktop */
+        width: calc(100% / 7);
+        padding: 1rem;
+        margin: 0 0.25rem;
+    }
+
+    .team-member h5 {
+        font-size: 0.9rem;
+        margin-top: 0.5rem;
+    }
+
+    .team-member p {
+        font-size: 0.75rem;
+    }
+}

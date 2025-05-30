@@ -4,8 +4,10 @@ const translations = {
         // Nawigacja
         "nav-contact": "Kontakt",
         "nav-about": "O firmie",
+        "nav-team": "Zespół",
         "nav-studio": "Studio",
         "nav-projects": "Projekty",
+        "nav-awards": "Nagrody",
         "nav-gallery": "Galeria",
 
         // Projekty - nowe elementy
@@ -41,6 +43,26 @@ const translations = {
         "studio-postproduction-desc": "Zaawansowane oprogramowanie, miks, mastering, sound design, restauracja dźwięku.",
         "studio-monitoring": "Odsłuch",
         "studio-monitoring-desc": "Profesjonalne monitory studyjne, akustyka pomieszczeń, komfortowa przestrzeń do pracy.",
+
+        // Zespół
+        "team-title": "Nasz zespół",
+        "team-description": "Poznaj profesjonalistów, którzy tworzą nasze studio.",
+        "team-member1-name": "Krzysztof Jastrząb",
+        "team-member1-role": "Założyciel i Główny Realizator Dźwięku",
+        "team-member2-name": "Anna Kowalska",
+        "team-member2-role": "Realizator Dźwięku",
+        "team-member3-name": "Piotr Nowak",
+        "team-member3-role": "Sound Designer",
+        "team-member4-name": "Marta Wiśniewska",
+        "team-member4-role": "Specjalista ds. Postprodukcji",
+        "team-member5-name": "Jan Kowalski",
+        "team-member5-role": "Inżynier Dźwięku",
+        "team-member6-name": "Karolina Lewandowska",
+        "team-member6-role": "Asystent Realizatora Dźwięku",
+        "team-member7-name": "Michał Zieliński",
+        "team-member7-role": "Montażysta Dźwięku",
+        "team-previous": "Poprzedni",
+        "team-next": "Następny",
 
         // Projekty
         "projects-title": "Projekty",
@@ -306,6 +328,22 @@ const translations = {
         "contact-person2-email": "anna.nowak@example.com",
         "contact-person2-phone": "+48 987 654 321",
 
+        // Nagrody
+        "awards-title": "Nagrody filmowe",
+        "awards-description": "Polskie nagrody filmowe dla produkcji, które nasze studio współtworzyło.",
+        "award1-title": "Polskie Nagrody Filmowe Orły",
+        "award1-movie": "Film: \"Cisza Nocy\"",
+        "award1-category": "Najlepszy dźwięk",
+        "award1-year": "2023",
+        "award2-title": "Festiwal Filmowy w Gdyni",
+        "award2-movie": "Film: \"Ostatni Rozdział\"",
+        "award2-category": "Najlepszy dźwięk",
+        "award2-year": "2022",
+        "award3-title": "Polska Nagroda Filmowa",
+        "award3-movie": "Film: \"Zimowy Sen\"",
+        "award3-category": "Wybitne osiągnięcie dźwiękowe",
+        "award3-year": "2023",
+
         // Stopka
         "footer-copyright": "© 2023 Pro-Ton Studio. Wszelkie prawa zastrzeżone."
     },
@@ -313,8 +351,10 @@ const translations = {
         // Navigation
         "nav-contact": "Contact",
         "nav-about": "About",
+        "nav-team": "Team",
         "nav-studio": "Studio",
         "nav-projects": "Projects",
+        "nav-awards": "Awards",
         "nav-gallery": "Gallery",
 
         // Projects - new elements
@@ -350,6 +390,26 @@ const translations = {
         "studio-postproduction-desc": "Advanced software, mixing, mastering, sound design, sound restoration.",
         "studio-monitoring": "Monitoring",
         "studio-monitoring-desc": "Professional studio monitors, room acoustics, comfortable workspace.",
+
+        // Team
+        "team-title": "Our Team",
+        "team-description": "Meet the professionals who make our studio.",
+        "team-member1-name": "Krzysztof Jastrząb",
+        "team-member1-role": "Founder and Chief Sound Engineer",
+        "team-member2-name": "Anna Kowalska",
+        "team-member2-role": "Sound Engineer",
+        "team-member3-name": "Piotr Nowak",
+        "team-member3-role": "Sound Designer",
+        "team-member4-name": "Marta Wiśniewska",
+        "team-member4-role": "Post-production Specialist",
+        "team-member5-name": "Jan Kowalski",
+        "team-member5-role": "Audio Engineer",
+        "team-member6-name": "Karolina Lewandowska",
+        "team-member6-role": "Sound Engineer Assistant",
+        "team-member7-name": "Michael Zielinski",
+        "team-member7-role": "Sound Editor",
+        "team-previous": "Previous",
+        "team-next": "Next",
 
         // Projects
         "projects-title": "Projects",
@@ -614,6 +674,22 @@ const translations = {
         "contact-person2-title": "Booking Specialist",
         "contact-person2-email": "anna.johnson@example.com",
         "contact-person2-phone": "+48 987 654 321",
+
+        // Awards
+        "awards-title": "Film Awards",
+        "awards-description": "Polish film awards for productions that our studio co-created.",
+        "award1-title": "Polish Film Awards Eagles",
+        "award1-movie": "Film: \"Night Silence\"",
+        "award1-category": "Best Sound",
+        "award1-year": "2023",
+        "award2-title": "Gdynia Film Festival",
+        "award2-movie": "Film: \"The Final Chapter\"",
+        "award2-category": "Best Sound",
+        "award2-year": "2022",
+        "award3-title": "Polish Film Award",
+        "award3-movie": "Film: \"Winter Dream\"",
+        "award3-category": "Outstanding Sound Achievement",
+        "award3-year": "2023",
 
         // Footer
         "footer-copyright": "© 2023 Pro-Ton Studio. All rights reserved."
